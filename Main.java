@@ -36,7 +36,6 @@ public class Main {
         y2.add(sc.nextInt());
         System.out.println("Please enter your outside-value for equation 2: ");
         z2.add(sc.nextInt());
-        compute();
     }
     
     public void compute()
@@ -86,6 +85,7 @@ public class Main {
 	public static void main(String[] args) {
         Main main = new Main();
         main.promptUser();
+        main.compute();
 	}
 
 }
