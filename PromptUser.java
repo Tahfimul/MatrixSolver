@@ -1,4 +1,4 @@
-package matricesSolver;
+//package matricesSolver;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -27,6 +27,6 @@ public class PromptUser {
         System.out.println("Please enter your outside-value for equation 2: ");
         z2.add(sc.nextInt());
     }
-        
+
 
 }

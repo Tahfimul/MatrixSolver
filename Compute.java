@@ -1,4 +1,4 @@
-package matricesSolver;
+//package matricesSolver;
 
 public class Compute {
 	PromptUser promptUser = new PromptUser();
@@ -11,7 +11,7 @@ public class Compute {
     	//-X  Y-
     	//|a  a| I = ab - ab
     	//|b  b|
-    	//-	   -	
+    	//-	   -
     	//-X  Z-
     	//|a  a| Y = (ab - ab) / I
     	//|b  b|
@@ -24,7 +24,7 @@ public class Compute {
     	arrangeXY[0][1] = promptUser.y1.get(0);
     	arrangeXY[1][0] = promptUser.x2.get(0);
     	arrangeXY[1][1] = promptUser.y2.get(0);
-    	double I = (arrangeXY[0][0] * arrangeXY[1][1])-(arrangeXY[0][1] * arrangeXY[1][0]);    
+    	double I = (arrangeXY[0][0] * arrangeXY[1][1])-(arrangeXY[0][1] * arrangeXY[1][0]);
     	arrangeZY[0][0] = promptUser.z1.get(0);
     	arrangeZY[0][1] = promptUser.y1.get(0);
     	arrangeZY[1][0] = promptUser.z2.get(0);
@@ -37,6 +37,6 @@ public class Compute {
     	arrangeXZ[1][1] = promptUser.z2.get(0);
     	double XZ = (arrangeXZ[0][0] * arrangeXZ[1][1])-(arrangeXZ[0][1] * arrangeXZ[1][0]);
     	double Y = XZ / I;
-    	displayResults.displayResults(I, X, Y);
+    	displayResults.displayResults(I, X, Y, arrangeXY, arrangeZY, arrangeXZ);
     }
 }

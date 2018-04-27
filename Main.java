@@ -1,7 +1,4 @@
-/**
- * 
- */
-package matricesSolver;
+//package matricesSolver;
 
 /**
  * @author Tahfimul Latif
