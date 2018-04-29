@@ -1,31 +1,32 @@
 //package matricesSolver;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class PromptUser {
-
-	public static ArrayList<Integer> x1 = new ArrayList<Integer>();
-    public static ArrayList<Integer> y1 = new ArrayList<Integer>();
-    public static ArrayList<Integer> z1 = new ArrayList<Integer>();
-	public static ArrayList<Integer> x2 = new ArrayList<Integer>();
-    public static ArrayList<Integer> y2 = new ArrayList<Integer>();
-    public static ArrayList<Integer> z2 = new ArrayList<Integer>();
+    public static int matrix[][], rows, columns;
     Scanner sc = new Scanner(System.in);
     public void promptUser()
     {
-        System.out.println("Please enter your x-value for equation 1: ");
-        x1.add(sc.nextInt());
-        System.out.println("Please enter your y-value for equation 1: ");
-        y1.add(sc.nextInt());
-        System.out.println("Please enter your outside-value for equation 1: ");
-        z1.add(sc.nextInt());
-        System.out.println("Please enter your x-value for equation 2: ");
-        x2.add(sc.nextInt());
-        System.out.println("Please enter your y-value for equation 2: ");
-        y2.add(sc.nextInt());
-        System.out.println("Please enter your outside-value for equation 2: ");
-        z2.add(sc.nextInt());
+
+
+        Compute Compute = new Compute();
+        System.out.println("How many rows are in your matrix?");
+        rows = sc.nextInt();
+        System.out.println("How many columns are in your matrix?");
+        columns = sc.nextInt();
+        matrix = new int[rows][columns+1];
+        for (int i=0; i<rows; i++)
+        {
+            for (int j=0; j<columns+1; j++)
+            {
+                System.out.println("Please enter number for row: "+i+" column: "+j);
+                int num = sc.nextInt();
+                matrix[i][j] = num;
+            }
+        }
+        Compute.compute(rows, columns);
     }
 
 
