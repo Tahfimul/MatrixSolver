@@ -6,16 +6,15 @@ import java.util.Scanner;
 
 public class PromptUser {
     public static int matrix[][], rows, columns;
-    String type;
+    char type;
     Scanner sc = new Scanner(System.in);
     public void promptUser()
     {
         Compute Compute = new Compute();
         System.out.println("Are you trying to solve a system of equations?(y/n)");
-        type = sc.nextLine();
-        if (type == "y")
+        type = sc.nextLine().charAt(0);
+        if (type == 'y')
         {
-
             System.out.println("How many rows are in your matrix?");
             rows = sc.nextInt();
             System.out.println("How many columns are in your matrix?");
@@ -30,8 +29,13 @@ public class PromptUser {
                     matrix[i][j] = num;
                 }
             }
-            Compute.compute(rows, columns);
         }
+        else
+        {
+
+        }
+
+        Compute.compute(rows, columns, type);
     }
 
 
