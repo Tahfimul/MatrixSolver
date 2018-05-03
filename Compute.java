@@ -5,9 +5,8 @@ import java.util.Arrays;
 public class Compute {
 	PromptUser promptUser = new PromptUser();
 	DisplayResults displayResults = new DisplayResults();
-    double[][] arrangeXY;
-    double[][] arrangeZY;
-    double[][] arrangeXZ;
+    double[][] arrangeXY, arrangeZY, arrangeXZ;
+    String[][] array;
     int column;
     public void compute(int rows, int columns, char type) {
 		if (type == 'y') {
@@ -15,6 +14,7 @@ public class Compute {
 				arrangeXY = new double[rows][columns];
 				arrangeZY = new double[rows][columns];
 				arrangeXZ = new double[rows][columns];
+				array = new String[1][3];
 				for (int i = 0; i < rows; i++) {
 					for (int j = 0; j < columns; j++) {
 						arrangeXY[i][j] = promptUser.matrix[i][j];
@@ -39,7 +39,10 @@ public class Compute {
 				double X = ZY / I;
 				double XZ = (arrangeXZ[0][0] * arrangeXZ[1][1]) - (arrangeXZ[0][1] * arrangeXZ[1][0]);
 				double Y = XZ / I;
-				displayResults.displayResults(I, X, Y, arrangeXY, arrangeZY, arrangeXZ);
+				array[0][0] = Arrays.deepToString(arrangeXY);
+				array[0][1] = Arrays.deepToString(arrangeZY);
+				array[0][2] = Arrays.deepToString(arrangeXZ);
+				displayResults.displayResults(I, X, Y, array, type);
 			}
 		}
 		else
