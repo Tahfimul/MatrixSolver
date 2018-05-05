@@ -12,11 +12,17 @@ public class PromptUser {
     {
         Compute Compute = new Compute();
         System.out.println("Are you trying to solve a system of equations?(y/n)");
-        type = sc.nextLine().charAt(0);
+        type = sc.next().charAt(0);
         System.out.println("How many rows are in your matrix?");
         rows = sc.nextInt();
         System.out.println("How many columns are in your matrix?");
         columns = sc.nextInt();
+
+        if (rows != columns)
+        {
+            System.out.println("Please an equal number of rows and columns.");
+            promptUser();
+        }
 
         if (type == 'y')
         {
@@ -33,10 +39,10 @@ public class PromptUser {
         }
         else
         {
-            matrix = new int[rows][columns];
+            matrix = new int[rows][rows];
             for (int i=0; i<rows; i++)
             {
-                for (int j=0; j<columns; j++)
+                for (int j=0; j<rows; j++)
                 {
                     System.out.println("Please enter number for row: "+i+" column: "+j);
                     int num = sc.nextInt();
@@ -47,6 +53,4 @@ public class PromptUser {
 
         Compute.compute(rows, columns, type);
     }
-
-
 }
