@@ -39,10 +39,10 @@ public class PromptUser {
         }
         else
         {
-            matrix = new int[rows][rows];
+            matrix = new int[rows][columns];
             for (int i=0; i<rows; i++)
             {
-                for (int j=0; j<rows; j++)
+                for (int j=0; j<columns; j++)
                 {
                     System.out.println("Please enter number for row: "+i+" column: "+j);
                     int num = sc.nextInt();
